@@ -1,6 +1,6 @@
 function checkCode() {
     const correctCode = "K2026";
-    const videoURL = "https://youtu.be/4VoG45v8WRY";
+    const videoURL = "https://youtu.be/Qz_YPmpfzjY?si=WsoVhtwGcE0B6D-8";
 
     const input = document.getElementById("codeInput");
     const message = document.getElementById("message");
@@ -12,16 +12,17 @@ function checkCode() {
     if (value === correctCode) {
         message.style.color = "lightgreen";
         message.textContent = "Correct! Opening video...";
-        correctSound.play();
+        if (correctSound) correctSound.play();
 
         setTimeout(() => {
             window.location.href = videoURL;
         }, 800);
+
     } else {
         message.style.color = "red";
         message.textContent = "Try again";
 
-        wrongSound.play();
+        if (wrongSound) wrongSound.play();
 
         input.classList.add("shake");
         setTimeout(() => {

@@ -6,7 +6,7 @@ const correctSound = document.getElementById("correctSound");
 const wrongSound = document.getElementById("wrongSound");
 
 /* TIMER 5:30 */
-let timeLeft = 5 * 60 + 30;
+let timeLeft = 3 * 60 + 30;
 const timeDisplay = document.getElementById("time");
 
 const timer = setInterval(() => {

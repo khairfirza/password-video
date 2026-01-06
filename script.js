@@ -5,7 +5,7 @@ const videoId = "Qz_YPmpfzjY"; // CHANGE IF NEEDED
 const correctSound = document.getElementById("correctSound");
 const wrongSound = document.getElementById("wrongSound");
 
-/* TIMER 5:30 */
+/* TIMER 3:30 */
 let timeLeft = 3 * 60 + 30;
 const timeDisplay = document.getElementById("time");
 

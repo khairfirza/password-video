@@ -1,32 +1,54 @@
+const correctCode = "K2026";
+
+/* ===== TIMER 5:30 ===== */
+let timeLeft = 5 * 60 + 30;
+const timeDisplay = document.getElementById("time");
+
+const timerInterval = setInterval(() => {
+  if (timeLeft <= 0) {
+    clearInterval(timerInterval);
+    document.getElementById("message").textContent = "Time is up!";
+    return;
+  }
+
+  timeLeft--;
+
+  const min = Math.floor(timeLeft / 60);
+  const sec = timeLeft % 60;
+
+  timeDisplay.textContent =
+    `${min.toString().padStart(2,"0")}:${sec.toString().padStart(2,"0")}`;
+}, 1000);
+
+/* ===== CHECK CODE ===== */
 function checkCode() {
-    const correctCode = "K2026";
-    const videoURL = "https://youtu.be/4VoG45v8WRY";
+  const input = document.getElementById("codeInput").value.toUpperCase();
+  const message = document.getElementById("message");
+  const card = document.getElementById("card");
 
-    const input = document.getElementById("codeInput");
-    const message = document.getElementById("message");
-    const correctSound = document.getElementById("correctSound");
-    const wrongSound = document.getElementById("wrongSound");
+  if (input === correctCode) {
+    message.style.color = "lightgreen";
+    message.textContent = "Correct!";
+    clearInterval(timerInterval);
+    setTimeout(playVideo, 600);
+  } else {
+    message.style.color = "red";
+    message.textContent = "Wrong code";
+    card.classList.add("shake");
+    setTimeout(() => card.classList.remove("shake"), 400);
+  }
+}
 
-    const value = input.value.trim().toUpperCase();
+/* ===== PLAY VIDEO FULLSCREEN ===== */
+function playVideo() {
+  const vc = document.getElementById("videoContainer");
+  const video = document.getElementById("video");
 
-    if (value === correctCode) {
-        message.style.color = "lightgreen";
-        message.textContent = "Correct! Opening video...";
-        if (correctSound) correctSound.play();
+  document.getElementById("card").style.display = "none";
+  vc.style.display = "block";
 
-        setTimeout(() => {
-            window.location.href = videoURL;
-        }, 800);
+  video.play();
 
-    } else {
-        message.style.color = "red";
-        message.textContent = "Try again";
-
-        if (wrongSound) wrongSound.play();
-
-        input.classList.add("shake");
-        setTimeout(() => {
-            input.classList.remove("shake");
-        }, 400);
-    }
+  if (video.requestFullscreen) video.requestFullscreen();
+  else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
 }

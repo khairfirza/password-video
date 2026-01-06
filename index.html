@@ -2,39 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Enter Code</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enter the Code</title>
 
-  <!-- STYLE -->
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- MAIN CARD -->
+  <!-- MAIN BOX -->
   <div id="card">
-    <img src="logo.png" class="logo" alt="Logo">
+    <img src="logo.png" class="logo">
 
-    <h2>Enter the Code</h2>
+    <h2>ENTER THE CODE</h2>
 
     <div id="timer">
-      Time Remaining: <span id="time">05:30</span>
+      <span id="time">05:30</span>
     </div>
 
-    <input type="text" id="codeInput" placeholder="Enter code">
+    <input id="codeInput" type="text" placeholder="Enter Code">
 
-    <button onclick="checkCode()">Submit</button>
+    <button onclick="checkCode()">SUBMIT</button>
 
     <div id="message"></div>
   </div>
 
-  <!-- VIDEO -->
+  <!-- YOUTUBE FULLSCREEN -->
   <div id="videoContainer">
-    <video id="video" src="video.mp4"></video>
+    <iframe id="ytPlayer"
+      frameborder="0"
+      allow="autoplay; fullscreen"
+      allowfullscreen>
+    </iframe>
   </div>
 
-  <!-- SCRIPT -->
-  <script src="script.js"></script>
+  <!-- AUDIO -->
+  <audio id="correctSound" src="correct.mp3"></audio>
+  <audio id="wrongSound" src="wrong.mp3"></audio>
 
+  <script src="script.js"></script>
 </body>
 </html>

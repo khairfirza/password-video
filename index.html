@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Enter Password</title>
+    <title>Enter Code</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,10 +11,10 @@
         <h2>Enter the Code</h2>
 
         <input 
-            type="password" 
-            id="codeInput" 
-            placeholder="Enter numbers only"
-            inputmode="numeric"
+            type="text"
+            id="codeInput"
+            placeholder="Enter code"
+            autocomplete="off"
         >
 
         <button onclick="checkCode()">Submit</button>

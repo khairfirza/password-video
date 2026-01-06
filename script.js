@@ -1,6 +1,6 @@
 function checkCode() {
     const correctCode = "K2026";
-    const videoURL = "https://youtu.be/Qz_YPmpfzjY?si=WsoVhtwGcE0B6D-8";
+    const videoURL = "https://youtu.be/4VoG45v8WRY";
 
     const input = document.getElementById("codeInput");
     const message = document.getElementById("message");

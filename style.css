@@ -13,55 +13,55 @@ body {
   color: white;
 }
 
-/* ===== CARD ===== */
+/* MAIN CARD */
 #card {
-  width: 520px;
-  padding: 48px;
+  width: 560px;
+  padding: 50px;
   background: rgba(255,255,255,0.08);
-  border-radius: 22px;
+  border-radius: 24px;
   text-align: center;
   box-shadow: 0 30px 60px rgba(0,0,0,0.6);
   backdrop-filter: blur(14px);
 }
 
-/* ===== LOGO ===== */
+/* LOGO */
 .logo {
-  width: 280px;
+  width: 300px;
   background: white;
-  padding: 18px;
+  padding: 20px;
   border-radius: 14px;
   margin-bottom: 30px;
 }
 
-/* ===== TITLE ===== */
+/* TITLE */
 h2 {
-  font-size: 28px;
-  margin-bottom: 16px;
+  font-size: 30px;
+  margin-bottom: 18px;
 }
 
-/* ===== TIMER ===== */
+/* TIMER */
 #timer {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
-  margin-bottom: 22px;
   color: #ffcc00;
+  margin-bottom: 22px;
 }
 
-/* ===== INPUT ===== */
+/* INPUT */
 input {
   width: 100%;
-  padding: 16px;
-  font-size: 22px;
+  padding: 18px;
+  font-size: 24px;
   border-radius: 12px;
   border: none;
   text-align: center;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 }
 
-/* ===== BUTTON ===== */
+/* BUTTON */
 button {
-  padding: 16px 44px;
-  font-size: 22px;
+  padding: 16px 48px;
+  font-size: 24px;
   border-radius: 30px;
   border: none;
   background: #3b82f6;
@@ -73,18 +73,18 @@ button:hover {
   background: #2563eb;
 }
 
-/* ===== MESSAGE ===== */
+/* MESSAGE */
 #message {
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 22px;
 }
 
-/* ===== SHAKE ===== */
+/* SHAKE */
 @keyframes shake {
   0% { transform: translateX(0); }
-  25% { transform: translateX(-8px); }
-  50% { transform: translateX(8px); }
-  75% { transform: translateX(-8px); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
   100% { transform: translateX(0); }
 }
 
@@ -92,7 +92,7 @@ button:hover {
   animation: shake 0.4s;
 }
 
-/* ===== VIDEO ===== */
+/* VIDEO FULLSCREEN */
 #videoContainer {
   display: none;
   position: fixed;
@@ -101,8 +101,7 @@ button:hover {
   z-index: 9999;
 }
 
-#video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+#ytPlayer {
+  width: 100vw;
+  height: 100vh;
 }

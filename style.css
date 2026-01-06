@@ -5,6 +5,12 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
+/* Prevent horizontal overflow */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     min-height: 100vh;
     background: radial-gradient(circle at top, #0f172a, #020617);
@@ -13,43 +19,46 @@ body {
     justify-content: center;
 }
 
-/* Main card */
+/* ONE centered card */
 .container {
     background: #1e293b;
-    padding: 40px 30px;
+    padding: 36px 28px;
     border-radius: 16px;
-    width: 420px;
-    max-width: 90%;
-    text-align: center;
+
+    width: 360px;
+    max-width: 90vw;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 
     box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
-/* LOGO */
+/* LOGO — constrained to box width */
 .logo {
-    width: 260px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
     margin-bottom: 20px;
+    object-fit: contain;
 }
 
 /* Title */
-.container h2 {
-    color: white;
+h2 {
+    color: #ffffff;
     font-size: 22px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 /* Input */
 #codeInput {
-    width: 320px;
-    max-width: 100%;
+    width: 100%;
     padding: 14px;
     font-size: 18px;
     text-align: center;
+
     border-radius: 10px;
     border: none;
     outline: none;
@@ -57,14 +66,18 @@ body {
 
 /* Button */
 button {
-    margin-top: 20px;
+    margin-top: 18px;
     padding: 10px 28px;
+
     border: none;
     border-radius: 999px;
+
     background: #e5e7eb;
     color: #2563eb;
+
     font-size: 16px;
     font-weight: 600;
+
     cursor: pointer;
 }
 
@@ -74,7 +87,7 @@ button:active {
 
 /* Message */
 #message {
-    margin-top: 16px;
+    margin-top: 14px;
     font-size: 16px;
     font-weight: 600;
 }

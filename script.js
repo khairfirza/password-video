@@ -1,6 +1,6 @@
 function checkCode() {
     const correctCode = "K2026";
-    const videoURL = "https://youtu.be/Qz_YPmpfzjY?si=WsoVhtwGcE0B6D-8";
+    const videoURL = "https://www.youtube.com/embed/Qz_YPmpfzjY";
 
     const input = document.getElementById("codeInput").value.toUpperCase();
     const message = document.getElementById("message");

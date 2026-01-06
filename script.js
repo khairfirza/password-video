@@ -1,8 +1,8 @@
 function checkCode() {
-    const correctCode = "K2026"; // CHANGE THIS
-    const videoURL = "https://youtu.be/WVskrZKq_r4?si=VFRIHOMosf-lnEsT";
+    const correctCode = "K2026";
+    const videoURL = "https://www.youtube.com/watch?v=YOUR_VIDEO_ID";
 
-    const input = document.getElementById("codeInput").value;
+    const input = document.getElementById("codeInput").value.toUpperCase();
     const message = document.getElementById("message");
 
     if (input === correctCode) {

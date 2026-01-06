@@ -1,54 +1,62 @@
 const correctCode = "K2026";
+const videoId = "Qz_YPmpfzjY"; // CHANGE IF NEEDED
 
-/* ===== TIMER 5:30 ===== */
+/* AUDIO */
+const correctSound = document.getElementById("correctSound");
+const wrongSound = document.getElementById("wrongSound");
+
+/* TIMER 5:30 */
 let timeLeft = 5 * 60 + 30;
 const timeDisplay = document.getElementById("time");
 
-const timerInterval = setInterval(() => {
+const timer = setInterval(() => {
   if (timeLeft <= 0) {
-    clearInterval(timerInterval);
-    document.getElementById("message").textContent = "Time is up!";
+    clearInterval(timer);
+    document.getElementById("message").textContent = "TIME IS UP!";
     return;
   }
 
   timeLeft--;
-
-  const min = Math.floor(timeLeft / 60);
-  const sec = timeLeft % 60;
+  const m = Math.floor(timeLeft / 60);
+  const s = timeLeft % 60;
 
   timeDisplay.textContent =
-    `${min.toString().padStart(2,"0")}:${sec.toString().padStart(2,"0")}`;
+    `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
 }, 1000);
 
-/* ===== CHECK CODE ===== */
+/* CHECK CODE */
 function checkCode() {
   const input = document.getElementById("codeInput").value.toUpperCase();
   const message = document.getElementById("message");
   const card = document.getElementById("card");
 
   if (input === correctCode) {
+    correctSound.play();
     message.style.color = "lightgreen";
-    message.textContent = "Correct!";
-    clearInterval(timerInterval);
-    setTimeout(playVideo, 600);
+    message.textContent = "CORRECT!";
+    clearInterval(timer);
+    setTimeout(playYouTube, 800);
   } else {
+    wrongSound.play();
     message.style.color = "red";
-    message.textContent = "Wrong code";
+    message.textContent = "WRONG CODE";
     card.classList.add("shake");
     setTimeout(() => card.classList.remove("shake"), 400);
   }
 }
 
-/* ===== PLAY VIDEO FULLSCREEN ===== */
-function playVideo() {
-  const vc = document.getElementById("videoContainer");
-  const video = document.getElementById("video");
+/* PLAY YOUTUBE FULLSCREEN */
+function playYouTube() {
+  const container = document.getElementById("videoContainer");
+  const iframe = document.getElementById("ytPlayer");
 
   document.getElementById("card").style.display = "none";
-  vc.style.display = "block";
+  container.style.display = "block";
 
-  video.play();
+  iframe.src =
+    `https://www.youtube.com/embed/${videoId}` +
+    `?autoplay=1&mute=0&controls=0&rel=0&playsinline=0`;
 
-  if (video.requestFullscreen) video.requestFullscreen();
-  else if (video.webkitRequestFullscreen) video.webkitRequestFullscreen();
+  if (container.requestFullscreen) container.requestFullscreen();
+  else if (container.webkitRequestFullscreen) container.webkitRequestFullscreen();
 }

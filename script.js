@@ -5,24 +5,6 @@ const videoId = "Qz_YPmpfzjY"; // CHANGE IF NEEDED
 const correctSound = document.getElementById("correctSound");
 const wrongSound = document.getElementById("wrongSound");
 
-/* TIMER 3:30 */
-let timeLeft = 3 * 60 + 30;
-const timeDisplay = document.getElementById("time");
-
-const timer = setInterval(() => {
-  if (timeLeft <= 0) {
-    clearInterval(timer);
-    document.getElementById("message").textContent = "TIME IS UP!";
-    return;
-  }
-
-  timeLeft--;
-  const m = Math.floor(timeLeft / 60);
-  const s = timeLeft % 60;
-
-  timeDisplay.textContent =
-    `${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
-}, 1000);
 
 /* CHECK CODE */
 function checkCode() {
@@ -34,7 +16,6 @@ function checkCode() {
     correctSound.play();
     message.style.color = "lightgreen";
     message.textContent = "CORRECT!";
-    clearInterval(timer);
     setTimeout(playYouTube, 800);
   } else {
     wrongSound.play();
